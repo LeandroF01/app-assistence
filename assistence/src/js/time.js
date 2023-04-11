@@ -6,10 +6,10 @@ const timeToSeg = (hours) => {
 };
 
 const timetoHour = (hours) => {
-	const horasTrabajadas = Math.floor(hours);
-	const minutosTrabajados = Math.floor((hours - horasTrabajadas) * 60);
+	const hoursJobs = Math.floor(hours);
+	const minutsJobs = Math.floor((hours - hoursJobs) * 60);
 
-	return `${horasTrabajadas.toString().padStart(2, "0")}:${minutosTrabajados
+	return `${hoursJobs.toString().padStart(2, "0")}:${minutsJobs
 		.toString()
 		.padStart(2, "0")}`;
 };
@@ -18,6 +18,6 @@ export const timeJobs = (entry, output) => {
 	const timeEntry = timeToSeg(entry);
 	const timeOutput = timeToSeg(output);
 	const hoursJobs = (timeOutput - timeEntry - 3600) / 3600;
-	console.log("time");
+
 	return timetoHour(hoursJobs);
 };
