@@ -1,5 +1,5 @@
 import { utils, writeFile } from "../../node_modules/xlsx/xlsx.mjs";
-import { hayErrores, validateErrorsFilter } from "./validation.js";
+import { totalErrors, validateErrorsFilter } from "./validation.js";
 
 const URL = "http://localhost:3000/api/v1/excel";
 
@@ -38,7 +38,7 @@ filter.addEventListener("submit", (event) => {
 		validateErrorsFilter("", "end");
 	}
 
-	if (!hayErrores()) {
+	if (!totalErrors()) {
 		fetch(URL)
 			.then((response) => response.json())
 			.then((data) => {
