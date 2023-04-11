@@ -20,9 +20,9 @@ export const validateErrors = (error, input) => {
 	});
 };
 
-export const hayErrores = () => {
-	const errores = document.querySelectorAll(".invalid-feedback");
-	return errores.length > 0;
+export const totalErrors = () => {
+	const errors = document.querySelectorAll(".invalid-feedback");
+	return errors.length > 0;
 };
 
 export const validateErrorsFilter = (error, input) => {
