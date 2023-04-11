@@ -5,12 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "build": "electron-builder",
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
   },
-  "author": "",
+  "author": "Leandro",
   "license": "ISC",
+  "build": {
+    "appId": "com.example.app",
+    "asar": true,
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
   "devDependencies": {
     "electron": "^23.2.1",
+    "electron-builder": "^23.6.0",
     "eslint": "^8.37.0",
     "eslint-plugin-import": "^2.27.5"
   },
